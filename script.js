@@ -153,64 +153,61 @@ async function loadRegistry() {
 
 function extractLinks(tool) {
     const links = [];
+    const githubCandidates = [];
     
     if (tool.backends && tool.backends.length > 0) {
+        // First pass: collect all GitHub candidates
         tool.backends.forEach(backend => {
             const [type, repo] = backend.split(':', 2);
             
             if (type === 'aqua' || type === 'ubi') {
                 // Format: aqua:owner/repo or ubi:owner/repo
-                const url = `https://github.com/${repo}`;
-                if (!links.some(link => link.url === url)) {
-                    links.push({ 
-                        type: 'github', 
-                        url: url,
-                        label: 'GitHub Repository'
-                    });
-                }
+                githubCandidates.push({
+                    url: `https://github.com/${repo}`,
+                    priority: 1, // Highest priority - main project repos
+                    source: type
+                });
             } else if (type === 'go') {
                 // Format: go:github.com/owner/repo/path
                 if (repo.startsWith('github.com/')) {
                     const parts = repo.split('/');
                     if (parts.length >= 3) {
-                        const url = `https://${parts[0]}/${parts[1]}/${parts[2]}`;
-                        if (!links.some(link => link.url === url)) {
-                            links.push({ 
-                                type: 'github', 
-                                url: url,
-                                label: 'GitHub Repository'
-                            });
-                        }
+                        githubCandidates.push({
+                            url: `https://${parts[0]}/${parts[1]}/${parts[2]}`,
+                            priority: 2, // Second priority - Go modules
+                            source: type
+                        });
                     }
                 }
             } else if (type === 'asdf') {
                 // Format: asdf:owner/repo or asdf:https://...
                 if (repo.startsWith('https://github.com/')) {
-                    if (!links.some(link => link.url === repo)) {
-                        links.push({ 
-                            type: 'github', 
-                            url: repo,
-                            label: 'GitHub Repository'
-                        });
-                    }
-                } else if (repo.startsWith('https://gitlab.com/')) {
-                    if (!links.some(link => link.url === repo)) {
-                        links.push({ 
-                            type: 'gitlab', 
-                            url: repo,
-                            label: 'GitLab Repository'
-                        });
-                    }
+                    // Check if it's a plugin repo (lower priority)
+                    const isPlugin = repo.includes('asdf-') || repo.includes('/asdf/') || repo.includes('mise-plugins/');
+                    githubCandidates.push({
+                        url: repo,
+                        priority: isPlugin ? 4 : 3, // Lower priority for plugins
+                        source: type
+                    });
                 } else if (!repo.includes('mise-plugins/') && repo.includes('/')) {
                     // Assume it's a GitHub repo if it has owner/repo format
-                    const url = `https://github.com/${repo}`;
-                    if (!links.some(link => link.url === url)) {
-                        links.push({ 
-                            type: 'github', 
-                            url: url,
-                            label: 'GitHub Repository'
-                        });
-                    }
+                    const isPlugin = repo.includes('asdf-');
+                    githubCandidates.push({
+                        url: `https://github.com/${repo}`,
+                        priority: isPlugin ? 4 : 3, // Lower priority for plugins
+                        source: type
+                    });
+                }
+            }
+            
+            // Add GitLab and NPM links
+            if (type === 'asdf' && repo.startsWith('https://gitlab.com/')) {
+                if (!links.some(link => link.url === repo)) {
+                    links.push({ 
+                        type: 'gitlab', 
+                        url: repo,
+                        label: 'GitLab Repository'
+                    });
                 }
             } else if (type === 'npm') {
                 // Format: npm:package-name
@@ -224,17 +221,24 @@ function extractLinks(tool) {
                 }
             }
         });
-    }
-    
-    // Add common documentation patterns
-    if (links.length > 0) {
-        const githubLink = links.find(link => link.type === 'github');
-        if (githubLink) {
-            const docsUrl = `${githubLink.url}#readme`;
-            links.push({ 
-                type: 'docs', 
-                url: docsUrl,
-                label: 'Documentation'
+        
+        // Select the best GitHub repository (lowest priority number = highest priority)
+        if (githubCandidates.length > 0) {
+            // Sort by priority, then remove duplicates
+            const uniqueCandidates = githubCandidates.reduce((acc, candidate) => {
+                if (!acc.find(c => c.url === candidate.url)) {
+                    acc.push(candidate);
+                }
+                return acc;
+            }, []);
+            
+            uniqueCandidates.sort((a, b) => a.priority - b.priority);
+            const bestCandidate = uniqueCandidates[0];
+            
+            links.unshift({ 
+                type: 'github', 
+                url: bestCandidate.url,
+                label: 'GitHub Repository'
             });
         }
     }

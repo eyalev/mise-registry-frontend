@@ -17,50 +17,25 @@
           "type": "github",
           "url": "https://github.com/nektos/act",
           "verified": true
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/gr1m0h/asdf-act",
-          "verified": true
-        },
-        {
-          "type": "docs",
-          "url": "https://github.com/nektos/act#readme",
-          "verified": true
         }
       ],
       "github": [
         {
           "url": "https://github.com/nektos/act",
-          "stars": 65387,
+          "stars": 65389,
           "topics": [
             "ci",
             "devops",
             "github-actions",
             "golang"
           ],
-          "last_updated": "2025-08-27T17:30:41Z",
+          "last_updated": "2025-08-27T18:45:50Z",
           "description": "Run your GitHub Actions locally 🚀",
           "verified": true,
           "language": "Go"
-        },
-        {
-          "url": "https://github.com/gr1m0h/asdf-act",
-          "stars": 10,
-          "topics": [
-            "asdf-plugin",
-            "ci",
-            "devops",
-            "github-actions",
-            "plugin"
-          ],
-          "last_updated": "2025-07-21T08:46:42Z",
-          "description": "act plugin for asdf version manager https://github.com/asdf-vm/asdf",
-          "verified": true,
-          "language": "Shell"
         }
       ],
-      "last_enhanced": "2025-08-27T17:56:10.917Z"
+      "last_enhanced": "2025-08-27T19:12:34.204Z"
     },
     "action-validator": {
       "description": "Tool to validate GitHub Action and Workflow YAML files",
@@ -83,11 +58,6 @@
           "type": "github",
           "url": "https://github.com/mpalmer/action-validator",
           "verified": true
-        },
-        {
-          "type": "docs",
-          "url": "https://github.com/mpalmer/action-validator#readme",
-          "verified": true
         }
       ],
       "github": [
@@ -101,7 +71,7 @@
           "language": "Rust"
         }
       ],
-      "last_enhanced": "2025-08-27T17:56:10.917Z"
+      "last_enhanced": "2025-08-27T19:12:34.204Z"
     },
     "actionlint": {
       "description": ":octocat: Static checker for GitHub Actions workflow files",
@@ -121,22 +91,12 @@
           "type": "github",
           "url": "https://github.com/rhysd/actionlint",
           "verified": true
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/crazy-matt/asdf-actionlint",
-          "verified": true
-        },
-        {
-          "type": "docs",
-          "url": "https://github.com/rhysd/actionlint#readme",
-          "verified": true
         }
       ],
       "github": [
         {
           "url": "https://github.com/rhysd/actionlint",
-          "stars": 3301,
+          "stars": 3302,
           "topics": [
             "actions",
             "ci",
@@ -144,22 +104,13 @@
             "lint",
             "linter"
           ],
-          "last_updated": "2025-08-27T13:55:20Z",
+          "last_updated": "2025-08-27T18:14:13Z",
           "description": ":octocat: Static checker for GitHub Actions workflow files",
           "verified": true,
           "language": "Go"
-        },
-        {
-          "url": "https://github.com/crazy-matt/asdf-actionlint",
-          "stars": 3,
-          "topics": [],
-          "last_updated": "2025-03-19T15:23:54Z",
-          "description": "actionlint plugin for asdf version manager https://github.com/asdf-vm/asdf",
-          "verified": true,
-          "language": "Shell"
         }
       ],
-      "last_enhanced": "2025-08-27T17:56:10.917Z"
+      "last_enhanced": "2025-08-27T19:12:34.204Z"
     },
     "aapt2": {
       "description": "Android Asset Packaging Tool (aapt)",
@@ -1962,10 +1913,10 @@
       "last_enhanced": "2025-08-27T17:59:02.466Z"
     }
   },
-  "last_updated": "2025-08-27T17:59:02.467Z",
+  "last_updated": "2025-08-27T19:12:34.204Z",
   "stats": {
     "total_tools": 56,
-    "github_repos": 70,
-    "verified_repos": 43
+    "github_repos": 68,
+    "verified_repos": 41
   }
 }

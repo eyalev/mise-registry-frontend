@@ -129,36 +129,69 @@ function parseRegistryTOML(tomlText) {
     return result;
 }
 
-// Extract GitHub repos from backends
+// Extract GitHub repos from backends with priority
 function extractGitHubRepos(tool) {
-    const repos = new Set();
+    const candidates = [];
     
     if (tool.backends) {
         tool.backends.forEach(backend => {
             const [type, repo] = backend.split(':', 2);
             
             if (type === 'aqua' || type === 'ubi') {
-                repos.add(repo);
+                candidates.push({
+                    repo: repo,
+                    priority: 1 // Highest priority - main project repos
+                });
             } else if (type === 'go' && repo.startsWith('github.com/')) {
                 const parts = repo.split('/');
                 if (parts.length >= 3) {
-                    repos.add(`${parts[1]}/${parts[2]}`);
+                    candidates.push({
+                        repo: `${parts[1]}/${parts[2]}`,
+                        priority: 2 // Second priority - Go modules
+                    });
                 }
             } else if (type === 'asdf') {
                 if (repo.startsWith('https://github.com/')) {
                     const url = new URL(repo);
                     const pathParts = url.pathname.split('/').filter(p => p);
                     if (pathParts.length >= 2) {
-                        repos.add(`${pathParts[0]}/${pathParts[1]}`);
+                        const repoPath = `${pathParts[0]}/${pathParts[1]}`;
+                        const isPlugin = repo.includes('asdf-') || repo.includes('/asdf/') || repo.includes('mise-plugins/');
+                        candidates.push({
+                            repo: repoPath,
+                            priority: isPlugin ? 4 : 3 // Lower priority for plugins
+                        });
                     }
                 } else if (!repo.includes('mise-plugins/') && repo.includes('/')) {
-                    repos.add(repo);
+                    const isPlugin = repo.includes('asdf-');
+                    candidates.push({
+                        repo: repo,
+                        priority: isPlugin ? 4 : 3 // Lower priority for plugins
+                    });
                 }
             }
         });
     }
     
-    return Array.from(repos);
+    // Sort by priority and return only the best candidate (or first few if tied)
+    if (candidates.length === 0) return [];
+    
+    // Remove duplicates and sort by priority
+    const uniqueCandidates = candidates.reduce((acc, candidate) => {
+        if (!acc.find(c => c.repo === candidate.repo)) {
+            acc.push(candidate);
+        }
+        return acc;
+    }, []);
+    
+    uniqueCandidates.sort((a, b) => a.priority - b.priority);
+    
+    // Return only the highest priority repo(s)
+    const topPriority = uniqueCandidates[0].priority;
+    return uniqueCandidates
+        .filter(c => c.priority === topPriority)
+        .slice(0, 1) // Only take the first one
+        .map(c => c.repo);
 }
 
 // Fetch GitHub repo data
@@ -315,17 +348,7 @@ async function processToolsInBatches(tools, batchSize = MAX_CONCURRENT) {
                 }
             }
             
-            // Add documentation links for verified GitHub repos
-            const primaryGithub = result.github.find(g => g.verified);
-            if (primaryGithub) {
-                const docsUrl = `${primaryGithub.url}#readme`;
-                const docsValid = await validateUrl(docsUrl);
-                result.links.push({
-                    type: 'docs',
-                    url: docsUrl,
-                    verified: docsValid
-                });
-            }
+            // Documentation links removed per user request
             
             return [name, result];
         });

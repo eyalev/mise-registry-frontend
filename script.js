@@ -392,7 +392,26 @@ function sortTools() {
         case 'alpha-reverse':
             filteredTools.sort((a, b) => b.name.localeCompare(a.name));
             break;
+        case 'stars':
+            filteredTools.sort((a, b) => {
+                const starsA = getMaxStars(a);
+                const starsB = getMaxStars(b);
+                return starsB - starsA; // High to low
+            });
+            break;
+        case 'stars-reverse':
+            filteredTools.sort((a, b) => {
+                const starsA = getMaxStars(a);
+                const starsB = getMaxStars(b);
+                return starsA - starsB; // Low to high
+            });
+            break;
     }
+}
+
+function getMaxStars(tool) {
+    if (!tool.github || tool.github.length === 0) return 0;
+    return Math.max(...tool.github.map(gh => gh.stars || 0));
 }
 
 function updateStats() {

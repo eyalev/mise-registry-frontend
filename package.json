@@ -1,0 +1,22 @@
+{
+  "name": "mise-registry-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for browsing the Mise tool registry with enhanced GitHub data",
+  "scripts": {
+    "update": "node update-registry.js",
+    "update-with-token": "GITHUB_TOKEN=$GITHUB_TOKEN node update-registry.js",
+    "update-prefix": "node update-registry.js --prefix",
+    "update-prefix-token": "GITHUB_TOKEN=$GITHUB_TOKEN node update-registry.js --prefix",
+    "update-force": "node update-registry.js --regenerate",
+    "update-old": "node update-registry.js --max-age=2d",
+    "merge": "node update-registry.js --merge",
+    "analyze": "node batch-update.js analyze",
+    "batch-commands": "node batch-update.js commands",
+    "batch-commands-token": "node batch-update.js commands --token",
+    "help": "node update-registry.js --help",
+    "serve": "python3 -m http.server 8080"
+  },
+  "keywords": ["mise", "tools", "registry", "github"],
+  "author": "",
+  "license": "MIT"
+}

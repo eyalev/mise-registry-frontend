@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mise Tool Registry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Mise Tool Registry</h1>
+            <p class="subtitle">Browse and search available tools in the Mise ecosystem</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="search" 
+                    placeholder="Search tools by name or description..."
+                    class="search-input"
+                >
+            </div>
+            
+            <div class="sort-container">
+                <label for="sort">Sort by:</label>
+                <select id="sort" class="sort-select">
+                    <option value="alpha">Name (A-Z)</option>
+                    <option value="alpha-reverse">Name (Z-A)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="stats" id="stats">
+            <span id="toolCount">Loading tools...</span>
+            <span id="filteredCount" class="filtered-count"></span>
+        </div>
+
+        <div id="toolsContainer" class="tools-grid">
+            <div class="loading">Loading registry...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Mise Tool Registry Viewer</p>
+    </footer>
+
+    <script src="script.js?v=7"></script>
+</body>
+</html>

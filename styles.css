@@ -141,12 +141,11 @@ header h1 {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: box-shadow 0.2s;
     animation: fadeIn 0.3s ease-in-out;
 }
 
 .tool-card:hover {
-    transform: translateY(-2px);
     box-shadow: 0 10px 25px -5px var(--shadow);
 }
 
@@ -218,14 +217,13 @@ header h1 {
     color: var(--text-primary);
     font-size: 0.875rem;
     font-weight: 500;
-    transition: all 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .tool-link:hover {
     background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-    transform: translateY(-1px);
 }
 
 .tool-link.github {

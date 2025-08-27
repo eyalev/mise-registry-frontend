@@ -138,6 +138,7 @@ async function loadRegistry() {
         }
         
         filteredTools = [...allTools];
+        sortTools();
         updateStats();
         renderTools();
     } catch (error) {
@@ -435,9 +436,16 @@ document.getElementById('search').addEventListener('input', (e) => {
     }, 300);
 });
 
-document.getElementById('sort').addEventListener('change', () => {
+document.getElementById('sort').addEventListener('change', (e) => {
+    localStorage.setItem('mise-registry-sort', e.target.value);
     sortTools();
     renderTools();
 });
+
+// Load saved sort preference
+const savedSort = localStorage.getItem('mise-registry-sort');
+if (savedSort) {
+    document.getElementById('sort').value = savedSort;
+}
 
 loadRegistry();

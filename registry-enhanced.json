@@ -1,0 +1,1971 @@
+{
+  "tools": {
+    "act": {
+      "description": "Run your GitHub Actions locally",
+      "backends": [
+        "aqua:nektos/act",
+        "ubi:nektos/act",
+        "asdf:gr1m0h/asdf-act"
+      ],
+      "test": [
+        "act --version",
+        "act version {{version}}"
+      ],
+      "name": "act",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/nektos/act",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/gr1m0h/asdf-act",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/nektos/act#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/nektos/act",
+          "stars": 65387,
+          "topics": [
+            "ci",
+            "devops",
+            "github-actions",
+            "golang"
+          ],
+          "last_updated": "2025-08-27T17:30:41Z",
+          "description": "Run your GitHub Actions locally 🚀",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/gr1m0h/asdf-act",
+          "stars": 10,
+          "topics": [
+            "asdf-plugin",
+            "ci",
+            "devops",
+            "github-actions",
+            "plugin"
+          ],
+          "last_updated": "2025-07-21T08:46:42Z",
+          "description": "act plugin for asdf version manager https://github.com/asdf-vm/asdf",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:56:10.917Z"
+    },
+    "action-validator": {
+      "description": "Tool to validate GitHub Action and Workflow YAML files",
+      "backends": [
+        "aqua:mpalmer/action-validator",
+        "ubi:mpalmer/action-validator",
+        "asdf:mpalmer/action-validator"
+      ],
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "test": [
+        "action-validator --version",
+        "action-validator {{version}}"
+      ],
+      "name": "action-validator",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/mpalmer/action-validator",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/mpalmer/action-validator#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/mpalmer/action-validator",
+          "stars": 336,
+          "topics": [],
+          "last_updated": "2025-08-24T16:50:28Z",
+          "description": "Tool to validate GitHub Action and Workflow YAML files",
+          "verified": true,
+          "language": "Rust"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:56:10.917Z"
+    },
+    "actionlint": {
+      "description": ":octocat: Static checker for GitHub Actions workflow files",
+      "backends": [
+        "aqua:rhysd/actionlint",
+        "ubi:rhysd/actionlint",
+        "asdf:crazy-matt/asdf-actionlint",
+        "go:github.com/rhysd/actionlint/cmd/actionlint"
+      ],
+      "test": [
+        "actionlint --version",
+        "{{version}}"
+      ],
+      "name": "actionlint",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/rhysd/actionlint",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/crazy-matt/asdf-actionlint",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/rhysd/actionlint#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/rhysd/actionlint",
+          "stars": 3301,
+          "topics": [
+            "actions",
+            "ci",
+            "github-actions",
+            "lint",
+            "linter"
+          ],
+          "last_updated": "2025-08-27T13:55:20Z",
+          "description": ":octocat: Static checker for GitHub Actions workflow files",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/crazy-matt/asdf-actionlint",
+          "stars": 3,
+          "topics": [],
+          "last_updated": "2025-03-19T15:23:54Z",
+          "description": "actionlint plugin for asdf version manager https://github.com/asdf-vm/asdf",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:56:10.917Z"
+    },
+    "aapt2": {
+      "description": "Android Asset Packaging Tool (aapt)",
+      "backends": [
+        "asdf:mise-plugins/mise-aapt2"
+      ],
+      "test": [
+        "aapt2 version 2>&1",
+        "Android Asset Packaging Tool (aapt)"
+      ],
+      "name": "aapt2",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "adr-tools": {
+      "description": "Command-line tools for working with Architecture Decision Records",
+      "backends": [
+        "aqua:npryce/adr-tools",
+        "asdf:https://gitlab.com/td7x/asdf/adr-tools"
+      ],
+      "test": [
+        "which adr",
+        "adr"
+      ],
+      "name": "adr-tools",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/npryce/adr-tools",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/npryce/adr-tools#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/npryce/adr-tools",
+          "stars": 5037,
+          "topics": [
+            "architecture",
+            "architecture-decision-records",
+            "documentation",
+            "markdown"
+          ],
+          "last_updated": "2025-08-27T12:08:44Z",
+          "description": "Command-line tools for working with Architecture Decision Records",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "ag": {
+      "description": "The Silver Searcher: A code searching tool similar to ack, with a focus on speed",
+      "backends": [
+        "asdf:mise-plugins/mise-ag"
+      ],
+      "name": "ag",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "age": {
+      "description": "A simple, modern and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability",
+      "backends": [
+        "aqua:FiloSottile/age",
+        "asdf:threkk/asdf-age"
+      ],
+      "test": [
+        "age --version",
+        "v{{version}}"
+      ],
+      "name": "age",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/FiloSottile/age",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/threkk/asdf-age",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/FiloSottile/age#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/FiloSottile/age",
+          "stars": 19554,
+          "topics": [
+            "age-encryption",
+            "built-at-rc"
+          ],
+          "last_updated": "2025-08-27T16:20:14Z",
+          "description": "A simple, modern and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability.",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/threkk/asdf-age",
+          "stars": 2,
+          "topics": [
+            "asdf-plugin"
+          ],
+          "last_updated": "2025-03-04T01:27:00Z",
+          "description": "Age plugin for the asdf version manager",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "age-plugin-yubikey": {
+      "description": "age-plugin-yubikey is a plugin for age clients like age and rage, which enables files to be encrypted to age identities stored on YubiKeys",
+      "backends": [
+        "ubi:str4d/age-plugin-yubikey",
+        "asdf:joke/asdf-age-plugin-yubikey"
+      ],
+      "name": "age-plugin-yubikey",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/str4d/age-plugin-yubikey",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/joke/asdf-age-plugin-yubikey",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/str4d/age-plugin-yubikey#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/str4d/age-plugin-yubikey",
+          "stars": 741,
+          "topics": [
+            "age-encryption",
+            "cli",
+            "encryption",
+            "plugin",
+            "rust",
+            "yubikey"
+          ],
+          "last_updated": "2025-08-24T19:31:28Z",
+          "description": "YubiKey plugin for age",
+          "verified": true,
+          "language": "Rust"
+        },
+        {
+          "url": "https://github.com/joke/asdf-age-plugin-yubikey",
+          "stars": 1,
+          "topics": [
+            "age-plugin-yubikey",
+            "asdf",
+            "asdf-plugin",
+            "rtx",
+            "rtx-plugin"
+          ],
+          "last_updated": "2023-12-28T11:16:10Z",
+          "description": "age-plugin-yubikey plugin for asdf or rtx",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "agebox": {
+      "description": "Age based repository file encryption gitops tool",
+      "backends": [
+        "aqua:slok/agebox",
+        "ubi:slok/agebox",
+        "asdf:slok/asdf-agebox"
+      ],
+      "test": [
+        "agebox --version 2>&1",
+        "v{{version}}"
+      ],
+      "name": "agebox",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/slok/agebox",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/slok/asdf-agebox",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/slok/agebox#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/slok/agebox",
+          "stars": 314,
+          "topics": [
+            "age",
+            "blackbox",
+            "encryption",
+            "git-crypt",
+            "gitops",
+            "repository-secrets",
+            "secrets",
+            "secrets-management",
+            "security",
+            "security-tools",
+            "sops"
+          ],
+          "last_updated": "2025-08-27T15:32:33Z",
+          "description": "Age based repository file encryption gitops tool",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/slok/asdf-agebox",
+          "stars": 0,
+          "topics": [],
+          "last_updated": "2023-05-30T19:16:43Z",
+          "description": "Agebox asdf plugin",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aichat": {
+      "description": "Use GPT-4(V), Gemini, LocalAI, Ollama and other LLMs in the terminal",
+      "backends": [
+        "aqua:sigoden/aichat"
+      ],
+      "test": [
+        "aichat --version",
+        "{{version}}"
+      ],
+      "name": "aichat",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/sigoden/aichat",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/sigoden/aichat#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/sigoden/aichat",
+          "stars": 7959,
+          "topics": [
+            "ai",
+            "ai-agents",
+            "chatbot",
+            "claude",
+            "cli",
+            "function-calling",
+            "gemini",
+            "llm",
+            "ollama",
+            "openai",
+            "rag",
+            "rust",
+            "shell",
+            "webui"
+          ],
+          "last_updated": "2025-08-27T17:39:34Z",
+          "description": "All-in-one LLM CLI tool featuring Shell Assistant, Chat-REPL, RAG, AI Tools & Agents, with access to OpenAI, Claude, Gemini, Ollama, Groq, and more.",
+          "verified": true,
+          "language": "Rust"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "air": {
+      "description": "Live reload for Go apps",
+      "backends": [
+        "aqua:air-verse/air",
+        "asdf:pdemagny/asdf-air"
+      ],
+      "test": [
+        "air -v",
+        "{{version}}"
+      ],
+      "name": "air",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/air-verse/air",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/pdemagny/asdf-air",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/air-verse/air#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/air-verse/air",
+          "stars": 21507,
+          "topics": [
+            "docker",
+            "file-watcher",
+            "gin",
+            "go",
+            "live-reload",
+            "task-runner",
+            "tools",
+            "watcher"
+          ],
+          "last_updated": "2025-08-27T17:33:30Z",
+          "description": "☁️ Live reload for Go apps",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/pdemagny/asdf-air",
+          "stars": 3,
+          "topics": [],
+          "last_updated": "2025-04-20T17:04:35Z",
+          "description": "asdf plugin for air (https://github.com/cosmtrek/air)",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aks-engine": {
+      "description": "AKS Engine deploys and manages Kubernetes clusters in Azure",
+      "backends": [
+        "aqua:Azure/aks-engine",
+        "asdf:robsonpeixoto/asdf-aks-engine"
+      ],
+      "test": [
+        "aks-engine version",
+        "Version: v{{version}}"
+      ],
+      "name": "aks-engine",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/Azure/aks-engine",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/robsonpeixoto/asdf-aks-engine",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/Azure/aks-engine#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/Azure/aks-engine",
+          "stars": 1023,
+          "topics": [
+            "azure",
+            "containers",
+            "docker",
+            "golang",
+            "kubernetes",
+            "orchestration"
+          ],
+          "last_updated": "2025-07-27T09:41:33Z",
+          "description": "AKS Engine: legacy tool for Kubernetes on Azure (see status)",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/robsonpeixoto/asdf-aks-engine",
+          "stars": 0,
+          "topics": [],
+          "last_updated": "2019-06-22T13:25:18Z",
+          "description": "",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "allure": {
+      "description": "Allure Report is a popular open source tool for visualizing the results of a test run",
+      "backends": [
+        "asdf:mise-plugins/mise-allure"
+      ],
+      "test": [
+        "allure --version",
+        "{{version}}"
+      ],
+      "name": "allure",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "allurectl": {
+      "description": "allurectl is the command line wrapper of Allure TestOps' API allowing you to upload the test results in real time from a build job, and managing entities on Allure TestOps side (test cases, launches, projects)",
+      "backends": [
+        "ubi:allure-framework/allurectl"
+      ],
+      "test": [
+        "allurectl --version",
+        "allurectl version {{version}}"
+      ],
+      "name": "allurectl",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/allure-framework/allurectl",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/allure-framework/allurectl#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/allure-framework/allurectl",
+          "stars": 33,
+          "topics": [
+            "allure",
+            "testops"
+          ],
+          "last_updated": "2025-01-24T11:44:00Z",
+          "description": "Allure TestOps Command line tool",
+          "verified": true,
+          "language": null
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "alp": {
+      "description": "Access Log Profiler",
+      "backends": [
+        "aqua:tkuchiki/alp",
+        "asdf:asdf-community/asdf-alp"
+      ],
+      "test": [
+        "alp --version",
+        "{{version}}"
+      ],
+      "name": "alp",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/tkuchiki/alp",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/asdf-community/asdf-alp",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/tkuchiki/alp#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/tkuchiki/alp",
+          "stars": 693,
+          "topics": [
+            "access-logs",
+            "golang",
+            "json",
+            "ltsv",
+            "profiler",
+            "regexp"
+          ],
+          "last_updated": "2025-07-27T15:42:38Z",
+          "description": "Access Log Profiler",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/asdf-community/asdf-alp",
+          "stars": 5,
+          "topics": [
+            "asdf",
+            "asdf-plugin"
+          ],
+          "last_updated": "2025-03-15T01:59:42Z",
+          "description": "alp plugin for the asdf version manager [maintainer=LOOKING FOR A MAINTAINER! SUBMIT A PULL REQUEST TO THE INFRASTRUCTURE REPOSITORY!]",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "amass": {
+      "description": "In-depth attack surface mapping and asset discovery",
+      "backends": [
+        "ubi:owasp-amass/amass",
+        "asdf:dhoeric/asdf-amass"
+      ],
+      "test": [
+        "amass -version 2>&1",
+        "v{{version}}"
+      ],
+      "name": "amass",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/owasp-amass/amass",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/dhoeric/asdf-amass",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/owasp-amass/amass#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/owasp-amass/amass",
+          "stars": 13483,
+          "topics": [
+            "attack-surfaces",
+            "dns",
+            "enumeration",
+            "go",
+            "golang",
+            "information-gathering",
+            "maltego",
+            "network-security",
+            "osint",
+            "osint-reconnaissance",
+            "owasp",
+            "recon",
+            "subdomain"
+          ],
+          "last_updated": "2025-08-27T17:41:35Z",
+          "description": "In-depth attack surface mapping and asset discovery",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/dhoeric/asdf-amass",
+          "stars": 0,
+          "topics": [],
+          "last_updated": "2022-11-30T13:27:05Z",
+          "description": "",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "amazon-ecr-credential-helper": {
+      "description": "Automatically gets credentials for Amazon ECR on docker push/docker pull",
+      "backends": [
+        "aqua:awslabs/amazon-ecr-credential-helper",
+        "asdf:dex4er/asdf-amazon-ecr-credential-helper"
+      ],
+      "test": [
+        "docker-credential-ecr-login version",
+        "docker-credential-ecr-login (github.com/awslabs/amazon-ecr-credential-helper/ecr-login) {{version}}"
+      ],
+      "name": "amazon-ecr-credential-helper",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/awslabs/amazon-ecr-credential-helper",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/dex4er/asdf-amazon-ecr-credential-helper",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/awslabs/amazon-ecr-credential-helper#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/awslabs/amazon-ecr-credential-helper",
+          "stars": 2636,
+          "topics": [],
+          "last_updated": "2025-08-24T18:31:46Z",
+          "description": "Automatically gets credentials for Amazon ECR on docker push/docker pull",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/dex4er/asdf-amazon-ecr-credential-helper",
+          "stars": 1,
+          "topics": [
+            "asdf",
+            "hacktoberfest"
+          ],
+          "last_updated": "2025-03-24T02:04:06Z",
+          "description": "amazon-ecr-credential-helper plugin for asdf",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "amp": {
+      "description": "An agentic coding tool built by Sourcegraph",
+      "backends": [
+        "npm:@sourcegraph/amp"
+      ],
+      "test": [
+        "amp --version | cut -d' ' -f1",
+        "{{version}}"
+      ],
+      "name": "amp",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "android-sdk": {
+      "description": "Android Command-line tools",
+      "backends": [
+        "asdf:mise-plugins/mise-android-sdk"
+      ],
+      "depends": [
+        "java",
+        "yq"
+      ],
+      "name": "android-sdk",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "ansible": {
+      "description": "ansible python package contains the core runtime and CLI tools, such as ansible and ansible-playbook and extra modules, plugins, and roles",
+      "backends": [
+        "pipx:ansible[uvx=false",
+        "pipx_args=--include-deps]"
+      ],
+      "test": [
+        "ansible --version",
+        "ansible"
+      ],
+      "name": "ansible",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "ansible-core": {
+      "aliases": [
+        "ansible-base"
+      ],
+      "description": "ansible-core python package contains the core runtime and CLI tools, such as ansible and ansible-playbook",
+      "backends": [
+        "pipx:ansible-core"
+      ],
+      "test": [
+        "ansible --version",
+        "ansible [core {{version}}]"
+      ],
+      "name": "ansible-core",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "ant": {
+      "description": "Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other",
+      "backends": [
+        "asdf:mise-plugins/mise-ant"
+      ],
+      "name": "ant",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "apko": {
+      "description": "Build OCI images from APK packages directly without Dockerfile",
+      "backends": [
+        "aqua:chainguard-dev/apko",
+        "ubi:chainguard-dev/apko",
+        "asdf:omissis/asdf-apko"
+      ],
+      "test": [
+        "apko version",
+        "GitVersion:    v{{version}}"
+      ],
+      "name": "apko",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/chainguard-dev/apko",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/omissis/asdf-apko",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/chainguard-dev/apko#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/chainguard-dev/apko",
+          "stars": 1410,
+          "topics": [
+            "containers",
+            "docker",
+            "oci"
+          ],
+          "last_updated": "2025-08-27T15:39:59Z",
+          "description": "Build OCI images from APK packages directly without Dockerfile",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/omissis/asdf-apko",
+          "stars": 0,
+          "topics": [],
+          "last_updated": "2024-01-05T08:42:51Z",
+          "description": "asdf plugin for chainguard's apko tool",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "apollo-ios": {
+      "aliases": [
+        "apollo-ios-cli"
+      ],
+      "description": "Apollo iOS Code Generation",
+      "backends": [
+        "asdf:mise-plugins/mise-apollo-ios-cli"
+      ],
+      "name": "apollo-ios",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "apollo-router": {
+      "description": "A configurable, high-performance routing runtime for Apollo Federation",
+      "backends": [
+        "ubi:apollographql/router",
+        "asdf:safx/asdf-apollo-router"
+      ],
+      "test": [
+        "router --version",
+        "{{version}}"
+      ],
+      "name": "apollo-router",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/apollographql/router",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/safx/asdf-apollo-router",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/apollographql/router#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/apollographql/router",
+          "stars": 910,
+          "topics": [
+            "apollo",
+            "federated-graph",
+            "federation",
+            "gateway",
+            "gateway-api",
+            "graph-router",
+            "graphql"
+          ],
+          "last_updated": "2025-08-27T16:35:04Z",
+          "description": "A configurable, high-performance routing runtime for Apollo Federation 🚀",
+          "verified": true,
+          "language": "Rust"
+        },
+        {
+          "url": "https://github.com/safx/asdf-apollo-router",
+          "stars": 0,
+          "topics": [],
+          "last_updated": "2022-09-24T14:38:15Z",
+          "description": "apollo-router plugin for the asdf version manager.",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "apollo-rover": {
+      "description": "The CLI for Apollo GraphOS",
+      "backends": [
+        "ubi:apollographql/rover"
+      ],
+      "test": [
+        "rover --version",
+        "Rover {{version}}"
+      ],
+      "name": "apollo-rover",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/apollographql/rover",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/apollographql/rover#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/apollographql/rover",
+          "stars": 432,
+          "topics": [
+            "apollo",
+            "cli",
+            "graphql",
+            "rust"
+          ],
+          "last_updated": "2025-08-19T23:43:28Z",
+          "description": "The CLI for Apollo GraphOS",
+          "verified": true,
+          "language": "Rust"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aqua": {
+      "description": "Declarative CLI Version manager written in Go. Support Lazy Install, Registry, and continuous update with Renovate. CLI version is switched seamlessly",
+      "backends": [
+        "ubi:aquaproj/aqua"
+      ],
+      "test": [
+        "aqua version",
+        "{{version}}"
+      ],
+      "name": "aqua",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/aquaproj/aqua",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/aquaproj/aqua#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/aquaproj/aqua",
+          "stars": 1304,
+          "topics": [
+            "cli",
+            "oss",
+            "version-manager"
+          ],
+          "last_updated": "2025-08-27T12:14:32Z",
+          "description": "Declarative CLI Version manager written in Go. Support Lazy Install, Registry, and continuous update with Renovate. CLI version is switched seamlessly",
+          "verified": true,
+          "language": "Go"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "arduino": {
+      "aliases": [
+        "arduino-cli"
+      ],
+      "description": "Arduino command line tool",
+      "backends": [
+        "aqua:arduino/arduino-cli",
+        "asdf:egnor/asdf-arduino-cli"
+      ],
+      "test": [
+        "arduino-cli version",
+        "arduino-cli  Version: {{version}}"
+      ],
+      "name": "arduino",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/arduino/arduino-cli",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/egnor/asdf-arduino-cli",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/arduino/arduino-cli#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/arduino/arduino-cli",
+          "stars": 4633,
+          "topics": [
+            "arduino",
+            "cli",
+            "command-line",
+            "golang",
+            "tooling-team"
+          ],
+          "last_updated": "2025-08-27T15:44:07Z",
+          "description": "Arduino command line tool",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/egnor/asdf-arduino-cli",
+          "stars": 0,
+          "topics": [],
+          "last_updated": "2024-05-12T15:40:45Z",
+          "description": "",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "argc": {
+      "description": "A Bash CLI framework, also a Bash command runner",
+      "backends": [
+        "ubi:sigoden/argc"
+      ],
+      "test": [
+        "argc --argc-version",
+        "argc {{version}}"
+      ],
+      "name": "argc",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/sigoden/argc",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/sigoden/argc#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/sigoden/argc",
+          "stars": 981,
+          "topics": [
+            "argc",
+            "bash",
+            "bashscript",
+            "cli-framework",
+            "cli-generator",
+            "command-line",
+            "command-line-parser",
+            "command-line-tool",
+            "rust",
+            "shell",
+            "task-runner"
+          ],
+          "last_updated": "2025-08-27T12:30:05Z",
+          "description": "A Bash CLI framework, also a Bash command runner.",
+          "verified": true,
+          "language": "Rust"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "argo": {
+      "description": "Argo Workflows CLI. Workflow engine for Kubernetes",
+      "backends": [
+        "aqua:argoproj/argo-workflows",
+        "asdf:sudermanjr/asdf-argo"
+      ],
+      "test": [
+        "argo version",
+        "argo: v{{version}}"
+      ],
+      "name": "argo",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/argoproj/argo-workflows",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/sudermanjr/asdf-argo",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/argoproj/argo-workflows#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/argoproj/argo-workflows",
+          "stars": 15967,
+          "topics": [
+            "airflow",
+            "argo",
+            "argo-workflows",
+            "batch-processing",
+            "cloud-native",
+            "cncf",
+            "dag",
+            "data-engineering",
+            "gitops",
+            "hacktoberfest",
+            "k8s",
+            "knative",
+            "kubernetes",
+            "machine-learning",
+            "mlops",
+            "pipelines",
+            "workflow",
+            "workflow-engine"
+          ],
+          "last_updated": "2025-08-27T10:59:50Z",
+          "description": "Workflow Engine for Kubernetes",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/sudermanjr/asdf-argo",
+          "stars": 2,
+          "topics": [],
+          "last_updated": "2024-05-23T07:58:12Z",
+          "description": "asdf installer for Kubernetes In Docker",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "argo-rollouts": {
+      "description": "Progressive Delivery for Kubernetes",
+      "backends": [
+        "aqua:argoproj/argo-rollouts",
+        "asdf:abatilo/asdf-argo-rollouts"
+      ],
+      "name": "argo-rollouts",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/argoproj/argo-rollouts",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/abatilo/asdf-argo-rollouts",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/argoproj/argo-rollouts#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/argoproj/argo-rollouts",
+          "stars": 3209,
+          "topics": [
+            "argo-rollouts",
+            "argoproj",
+            "bluegreen",
+            "canary",
+            "deployments",
+            "experiments",
+            "gitops",
+            "hacktoberfest",
+            "kubernetes",
+            "progressive-delivery"
+          ],
+          "last_updated": "2025-08-27T09:55:05Z",
+          "description": "Progressive Delivery for Kubernetes",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/abatilo/asdf-argo-rollouts",
+          "stars": 2,
+          "topics": [],
+          "last_updated": "2023-04-25T21:25:26Z",
+          "description": "asdf-vm plugin for https://github.com/argoproj/argo-rollouts",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "argocd": {
+      "description": "Declarative continuous deployment for Kubernetes",
+      "backends": [
+        "aqua:argoproj/argo-cd",
+        "ubi:argoproj/argo-cd[exe=argocd]",
+        "asdf:beardix/asdf-argocd"
+      ],
+      "name": "argocd",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/argoproj/argo-cd",
+          "verified": true
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/beardix/asdf-argocd",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/argoproj/argo-cd#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/argoproj/argo-cd",
+          "stars": 20472,
+          "topics": [
+            "argo",
+            "argo-cd",
+            "cd",
+            "ci-cd",
+            "cicd",
+            "continuous-delivery",
+            "continuous-deployment",
+            "devops",
+            "docker",
+            "gitops",
+            "hacktoberfest",
+            "helm",
+            "jsonnet",
+            "kubernetes",
+            "kustomize",
+            "pipeline"
+          ],
+          "last_updated": "2025-08-27T17:05:31Z",
+          "description": "Declarative Continuous Deployment for Kubernetes",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/argoproj/argo-cd[exe=argocd]",
+          "verified": false,
+          "error": "Not Found"
+        },
+        {
+          "url": "https://github.com/beardix/asdf-argocd",
+          "stars": 7,
+          "topics": [],
+          "last_updated": "2025-04-16T15:39:26Z",
+          "description": "argocd plugin for the asdf version manager",
+          "verified": true,
+          "language": "Shell"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "asciidoctorj": {
+      "description": "AsciidoctorJ is the official library for running Asciidoctor on the JVM. Using AsciidoctorJ, you can convert AsciiDoc content or analyze the structure of a parsed AsciiDoc document from Java and other JVM languages",
+      "backends": [
+        "asdf:mise-plugins/mise-asciidoctorj"
+      ],
+      "name": "asciidoctorj",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "assh": {
+      "description": "make your ssh client smarter",
+      "backends": [
+        "ubi:moul/assh",
+        "asdf:mise-plugins/mise-assh"
+      ],
+      "test": [
+        "assh --version",
+        "assh version \"] # 2.16.0 reports version n/a",
+        "ast-grep.description = \"A CLI tool for code structural search",
+        "lint and rewriting. Written in Rust",
+        "ast-grep.backends = [",
+        "aqua:ast-grep/ast-grep",
+        "cargo:ast-grep",
+        "npm:@ast-grep/cli",
+        "pipx:ast-grep-cli"
+      ],
+      "name": "assh",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/moul/assh",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/moul/assh#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/moul/assh",
+          "stars": 3158,
+          "topics": [
+            "automation",
+            "config",
+            "config-management",
+            "devops",
+            "proxy",
+            "ssh"
+          ],
+          "last_updated": "2025-08-27T13:19:36Z",
+          "description": ":computer: make your ssh client smarter",
+          "verified": true,
+          "language": "Go"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "ast-grep": {
+      "test": [
+        "sg --version",
+        "ast-grep {{version}}"
+      ],
+      "name": "ast-grep",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "astro": {
+      "description": "CLI that makes it easy to create, test and deploy Airflow DAGs to Astronomer",
+      "backends": [
+        "ubi:astronomer/astro-cli[exe=astro]"
+      ],
+      "test": [
+        "astro version",
+        "Astro CLI Version: {{version}}"
+      ],
+      "name": "astro",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/astronomer/astro-cli[exe=astro]",
+          "verified": false,
+          "error": "Not Found"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "atlas": {
+      "description": "A modern tool for managing database schemas",
+      "backends": [
+        "aqua:ariga/atlas",
+        "asdf:komi1230/asdf-atlas"
+      ],
+      "name": "atlas",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/ariga/atlas",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/ariga/atlas#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/ariga/atlas",
+          "stars": 7241,
+          "topics": [],
+          "last_updated": "2025-08-27T16:01:26Z",
+          "description": "Manage your database schema as code",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/komi1230/asdf-atlas",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "atmos": {
+      "description": "Workflow automation tool for DevOps. Keep configuration DRY with hierarchical imports of configurations, inheritance, and WAY more. Native support for Terraform and Helmfile",
+      "backends": [
+        "aqua:cloudposse/atmos",
+        "asdf:cloudposse/asdf-atmos"
+      ],
+      "idiomatic_files": [
+        ".atmos-version"
+      ],
+      "test": [
+        "atmos version",
+        "Atmos {{version}}"
+      ],
+      "name": "atmos",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/cloudposse/atmos",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/cloudposse/atmos#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/cloudposse/atmos",
+          "stars": 1129,
+          "topics": [
+            "automation",
+            "cli",
+            "cloud",
+            "devops",
+            "hcl2",
+            "helm",
+            "helmfile",
+            "orchestration",
+            "terraform",
+            "workflow"
+          ],
+          "last_updated": "2025-08-27T08:29:10Z",
+          "description": "👽 Terraform Orchestration Tool for DevOps. Keep environment configuration DRY with hierarchical imports of configurations, inheritance, and WAY more. Native support for Terraform and Helmfile.",
+          "verified": true,
+          "language": "Go"
+        },
+        {
+          "url": "https://github.com/cloudposse/asdf-atmos",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "atuin": {
+      "description": "✨ Magical shell history",
+      "backends": [
+        "aqua:atuinsh/atuin",
+        "ubi:atuinsh/atuin"
+      ],
+      "test": [
+        "atuin --version",
+        "atuin {{version}}"
+      ],
+      "name": "atuin",
+      "links": [
+        {
+          "type": "github",
+          "url": "https://github.com/atuinsh/atuin",
+          "verified": true
+        },
+        {
+          "type": "docs",
+          "url": "https://github.com/atuinsh/atuin#readme",
+          "verified": true
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/atuinsh/atuin",
+          "stars": 25479,
+          "topics": [
+            "bash",
+            "fish",
+            "history",
+            "rust",
+            "shell",
+            "zsh"
+          ],
+          "last_updated": "2025-08-27T16:10:07Z",
+          "description": "✨ Magical shell history",
+          "verified": true,
+          "language": "Rust"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "auto-doc": {
+      "description": "Github action that turns your reusable workflows and custom actions into easy to read markdown tables",
+      "backends": [
+        "ubi:tj-actions/auto-doc",
+        "asdf:mise-plugins/mise-auto-doc"
+      ],
+      "test": [
+        "auto-doc --help",
+        "auto-doc [flags]"
+      ],
+      "name": "auto-doc",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/tj-actions/auto-doc",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-amplify": {
+      "aliases": [
+        "amplify"
+      ],
+      "description": "The AWS Amplify CLI is a toolchain for simplifying serverless web and mobile development",
+      "backends": [
+        "ubi:aws-amplify/amplify-cli[exe=amplify]",
+        "asdf:LozanoMatheus/asdf-aws-amplify-cli"
+      ],
+      "name": "aws-amplify",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/aws-amplify/amplify-cli[exe=amplify]",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/LozanoMatheus/asdf-aws-amplify-cli",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-cli": {
+      "aliases": [
+        "aws",
+        "awscli"
+      ],
+      "description": "The AWS Command Line Interface (AWS CLI) is a unified tool that provides a consistent interface for interacting with all parts of Amazon Web Services",
+      "backends": [
+        "aqua:aws/aws-cli",
+        "asdf:MetricMike/asdf-awscli"
+      ],
+      "test": [
+        "aws --version",
+        "aws-cli/{{version}}"
+      ],
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "name": "aws-cli",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/aws/aws-cli",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/MetricMike/asdf-awscli",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-copilot": {
+      "description": "The AWS Copilot CLI is a tool for developers to build, release and operate production ready containerized applications on AWS App Runner, Amazon ECS, and AWS Fargate",
+      "backends": [
+        "aqua:aws/copilot-cli",
+        "asdf:NeoHsu/asdf-copilot"
+      ],
+      "name": "aws-copilot",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/aws/copilot-cli",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/NeoHsu/asdf-copilot",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-iam-authenticator": {
+      "description": "A tool to use AWS IAM credentials to authenticate to a Kubernetes cluster",
+      "backends": [
+        "aqua:kubernetes-sigs/aws-iam-authenticator",
+        "asdf:zekker6/asdf-aws-iam-authenticator"
+      ],
+      "name": "aws-iam-authenticator",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/kubernetes-sigs/aws-iam-authenticator",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/zekker6/asdf-aws-iam-authenticator",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-nuke": {
+      "description": "Remove all the resources from an AWS account",
+      "backends": [
+        "aqua:ekristen/aws-nuke",
+        "asdf:bersalazar/asdf-aws-nuke"
+      ],
+      "name": "aws-nuke",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/ekristen/aws-nuke",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/bersalazar/asdf-aws-nuke",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-sam": {
+      "aliases": [
+        "aws-sam-cli"
+      ],
+      "description": "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM",
+      "backends": [
+        "{full = \"aqua:aws/aws-sam-cli",
+        "platforms = [",
+        "linux",
+        "macos",
+        "]}",
+        "pipx:aws-sam-cli",
+        "asdf:mise-plugins/mise-pyapp"
+      ],
+      "test": [
+        "sam --version",
+        "SAM CLI",
+        "version {{version}}"
+      ],
+      "name": "aws-sam",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-sso": {
+      "description": "A powerful tool for using AWS Identity Center for the CLI and web console",
+      "backends": [
+        "aqua:synfinatic/aws-sso-cli",
+        "asdf:adamcrews/asdf-aws-sso-cli"
+      ],
+      "name": "aws-sso",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/synfinatic/aws-sso-cli",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/adamcrews/asdf-aws-sso-cli",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "aws-vault": {
+      "description": "A vault for securely storing and accessing AWS credentials in development environments",
+      "backends": [
+        "aqua:99designs/aws-vault",
+        "asdf:karancode/asdf-aws-vault"
+      ],
+      "name": "aws-vault",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/99designs/aws-vault",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/karancode/asdf-aws-vault",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "awscli-local": {
+      "description": "This package provides the awslocal command, which is a thin wrapper around the aws command line interface for use with LocalStack",
+      "backends": [
+        "asdf:mise-plugins/mise-awscli-local"
+      ],
+      "name": "awscli-local",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "awsebcli": {
+      "description": "The AWS Elastic Beanstalk Command Line Interface (EB CLI) is a tool that helps you deploy and manage your Elastic Beanstalk applications and environments. It also provides integration with Git",
+      "backends": [
+        "pipx:awsebcli",
+        "asdf:mise-plugins/mise-pyapp"
+      ],
+      "test": [
+        "eb --version",
+        "EB CLI {{version}}"
+      ],
+      "name": "awsebcli",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "awsls": {
+      "description": "A list command for AWS resources",
+      "backends": [
+        "ubi:jckuester/awsls",
+        "asdf:chessmango/asdf-awsls"
+      ],
+      "test": [
+        "awsls --version",
+        "version: {{version}}"
+      ],
+      "name": "awsls",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/jckuester/awsls",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/chessmango/asdf-awsls",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "awsrm": {
+      "description": "A remove command for AWS resources",
+      "backends": [
+        "ubi:jckuester/awsrm",
+        "asdf:chessmango/asdf-awsrm"
+      ],
+      "test": [
+        "awsrm --version",
+        "version: {{version}}"
+      ],
+      "name": "awsrm",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/jckuester/awsrm",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/chessmango/asdf-awsrm",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "awsweeper": {
+      "description": "A tool for cleaning your AWS account",
+      "backends": [
+        "ubi:jckuester/awsweeper",
+        "asdf:chessmango/asdf-awsweeper"
+      ],
+      "test": [
+        "awsweeper --version",
+        "version: {{version}}"
+      ],
+      "name": "awsweeper",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/jckuester/awsweeper",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/chessmango/asdf-awsweeper",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "azure": {
+      "aliases": [
+        "azure-cli"
+      ],
+      "description": "azure-cli (az)",
+      "backends": [
+        "asdf:mise-plugins/mise-azure-cli"
+      ],
+      "name": "azure",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "azure-functions-core-tools": {
+      "description": "Command line tools for Azure Functions",
+      "backends": [
+        "asdf:mise-plugins/mise-azure-functions-core-tools"
+      ],
+      "name": "azure-functions-core-tools",
+      "links": [],
+      "github": [],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    },
+    "azure-kubelogin": {
+      "description": "A Kubernetes credential (exec) plugin implementing azure authentication",
+      "backends": [
+        "aqua:Azure/kubelogin",
+        "asdf:sechmann/asdf-kubelogin"
+      ],
+      "name": "azure-kubelogin",
+      "links": [],
+      "github": [
+        {
+          "url": "https://github.com/Azure/kubelogin",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        },
+        {
+          "url": "https://github.com/sechmann/asdf-kubelogin",
+          "verified": false,
+          "error": "API rate limit exceeded for 85.138.190.249. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+        }
+      ],
+      "last_enhanced": "2025-08-27T17:59:02.466Z"
+    }
+  },
+  "last_updated": "2025-08-27T17:59:02.467Z",
+  "stats": {
+    "total_tools": 56,
+    "github_repos": 70,
+    "verified_repos": 43
+  }
+}

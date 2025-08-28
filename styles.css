@@ -178,6 +178,17 @@ header h1 {
     margin: 0;
 }
 
+.tool-name-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: color 0.2s;
+}
+
+.tool-name-link:hover .tool-name {
+    color: var(--primary-hover);
+}
+
 .tool-aliases {
     display: flex;
     flex-wrap: wrap;

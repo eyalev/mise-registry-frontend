@@ -327,12 +327,33 @@ function renderTools() {
                 ${tool.os.map(os => `<span class="os-badge">${escapeHtml(os)}</span>`).join('')}
                </div>`
             : '';
+
+        // Find the best GitHub URL for the tool title link
+        let titleUrl = null;
+        if (tool.github && tool.github.length > 0) {
+            // Use the first verified GitHub repo
+            const verifiedRepo = tool.github.find(g => g.verified);
+            if (verifiedRepo) {
+                titleUrl = verifiedRepo.url;
+            }
+        }
+        // If no verified GitHub repo, check links for GitHub
+        if (!titleUrl && links.length > 0) {
+            const githubLink = links.find(link => link.type === 'github');
+            if (githubLink) {
+                titleUrl = githubLink.url;
+            }
+        }
+        
+        const titleHtml = titleUrl 
+            ? `<a href="${escapeHtml(titleUrl)}" target="_blank" rel="noopener noreferrer" class="tool-name-link"><h3 class="tool-name">${escapeHtml(tool.name)}</h3></a>`
+            : `<h3 class="tool-name">${escapeHtml(tool.name)}</h3>`;
         
         return `
             <div class="tool-card">
                 <div class="tool-header">
                     <div>
-                        <h3 class="tool-name">${escapeHtml(tool.name)}</h3>
+                        ${titleHtml}
                         ${aliasesHtml}
                     </div>
                 </div>

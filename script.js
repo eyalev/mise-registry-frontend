@@ -1,5 +1,7 @@
 let allTools = [];
 let filteredTools = [];
+let activeLanguageFilter = '';
+let activeTagFilter = '';
 
 function parseRegistryTOML(tomlText) {
     const result = { tools: {} };
@@ -138,6 +140,7 @@ async function loadRegistry() {
         }
         
         filteredTools = [...allTools];
+        populateFilters();
         sortTools();
         updateStats();
         renderTools();
@@ -274,12 +277,12 @@ function renderTools() {
                     <div class="github-repo">
                         <div class="github-stats">
                             ${github.stars ? `<span class="github-stars">⭐ ${formatNumber(github.stars)}</span>` : ''}
-                            ${github.language ? `<span class="github-language">${escapeHtml(github.language)}</span>` : ''}
+                            ${github.language ? `<span class="github-language" onclick="setLanguageFilter('${escapeHtml(github.language)}')">${escapeHtml(github.language)}</span>` : ''}
                         </div>
                         ${github.topics && github.topics.length > 0 ? 
                             `<div class="github-topics">
                                 ${github.topics.slice(0, 5).map(topic => 
-                                    `<span class="github-topic">${escapeHtml(topic)}</span>`
+                                    `<span class="github-topic" onclick="setTagFilter('${escapeHtml(topic)}')">${escapeHtml(topic)}</span>`
                                 ).join('')}
                              </div>` : ''}
                     </div>
@@ -361,27 +364,6 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-function filterTools(searchTerm) {
-    const term = searchTerm.toLowerCase().trim();
-    
-    if (!term) {
-        filteredTools = [...allTools];
-    } else {
-        filteredTools = allTools.filter(tool => {
-            const nameMatch = tool.name.toLowerCase().includes(term);
-            const descriptionMatch = tool.description && tool.description.toLowerCase().includes(term);
-            const aliasMatch = tool.aliases && tool.aliases.some(alias => 
-                alias.toLowerCase().includes(term)
-            );
-            
-            return nameMatch || descriptionMatch || aliasMatch;
-        });
-    }
-    
-    sortTools();
-    updateStats();
-    renderTools();
-}
 
 function sortTools() {
     const sortValue = document.getElementById('sort').value;
@@ -421,19 +403,148 @@ function updateStats() {
     
     toolCount.textContent = `Total tools: ${allTools.length}`;
     
+    let filterInfo = [];
+    if (activeLanguageFilter) {
+        filterInfo.push(`Language: ${activeLanguageFilter}`);
+    }
+    if (activeTagFilter) {
+        filterInfo.push(`Tag: ${activeTagFilter}`);
+    }
+    
     if (filteredTools.length !== allTools.length) {
-        filteredCount.textContent = `Showing: ${filteredTools.length}`;
+        let displayText = `Showing: ${filteredTools.length}`;
+        if (filterInfo.length > 0) {
+            displayText += ` (${filterInfo.join(', ')})`;
+        }
+        filteredCount.textContent = displayText;
     } else {
         filteredCount.textContent = '';
     }
+}
+
+function populateFilters() {
+    const languages = new Set();
+    const tags = new Set();
+    
+    allTools.forEach(tool => {
+        // Collect languages from GitHub data
+        if (tool.github && tool.github.length > 0) {
+            tool.github.forEach(github => {
+                if (github.language) {
+                    languages.add(github.language);
+                }
+            });
+        }
+        
+        // Collect tags/topics from GitHub data
+        if (tool.github && tool.github.length > 0) {
+            tool.github.forEach(github => {
+                if (github.topics && github.topics.length > 0) {
+                    github.topics.forEach(topic => {
+                        tags.add(topic);
+                    });
+                }
+            });
+        }
+    });
+    
+    // Populate language filter dropdown
+    const languageFilter = document.getElementById('languageFilter');
+    const sortedLanguages = Array.from(languages).sort();
+    
+    // Clear existing options except "All Languages"
+    languageFilter.innerHTML = '<option value="">All Languages</option>';
+    sortedLanguages.forEach(language => {
+        const option = document.createElement('option');
+        option.value = language;
+        option.textContent = language;
+        languageFilter.appendChild(option);
+    });
+    
+    // Populate tag filter dropdown
+    const tagFilter = document.getElementById('tagFilter');
+    const sortedTags = Array.from(tags).sort();
+    
+    // Clear existing options except "All Tags"
+    tagFilter.innerHTML = '<option value="">All Tags</option>';
+    sortedTags.forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.textContent = tag;
+        tagFilter.appendChild(option);
+    });
+    
+    // Restore saved filter values
+    if (activeLanguageFilter) {
+        languageFilter.value = activeLanguageFilter;
+    }
+    if (activeTagFilter) {
+        tagFilter.value = activeTagFilter;
+    }
+}
+
+function applyFilters() {
+    const searchTerm = document.getElementById('search').value.toLowerCase().trim();
+    
+    filteredTools = allTools.filter(tool => {
+        // Apply search filter
+        const nameMatch = tool.name.toLowerCase().includes(searchTerm);
+        const descriptionMatch = tool.description && tool.description.toLowerCase().includes(searchTerm);
+        const aliasMatch = tool.aliases && tool.aliases.some(alias => 
+            alias.toLowerCase().includes(searchTerm)
+        );
+        const searchMatch = !searchTerm || nameMatch || descriptionMatch || aliasMatch;
+        
+        // Apply language filter
+        const languageMatch = !activeLanguageFilter || (tool.github && tool.github.some(github => 
+            github.language === activeLanguageFilter
+        ));
+        
+        // Apply tag filter
+        const tagMatch = !activeTagFilter || (tool.github && tool.github.some(github => 
+            github.topics && github.topics.includes(activeTagFilter)
+        ));
+        
+        return searchMatch && languageMatch && tagMatch;
+    });
+    
+    sortTools();
+    updateStats();
+    renderTools();
+}
+
+function setLanguageFilter(language) {
+    activeLanguageFilter = language;
+    document.getElementById('languageFilter').value = language;
+    localStorage.setItem('mise-registry-language-filter', language);
+    applyFilters();
+}
+
+function setTagFilter(tag) {
+    activeTagFilter = tag;
+    document.getElementById('tagFilter').value = tag;
+    localStorage.setItem('mise-registry-tag-filter', tag);
+    applyFilters();
 }
 
 let searchTimeout;
 document.getElementById('search').addEventListener('input', (e) => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
-        filterTools(e.target.value);
+        applyFilters();
     }, 300);
+});
+
+document.getElementById('languageFilter').addEventListener('change', (e) => {
+    activeLanguageFilter = e.target.value;
+    localStorage.setItem('mise-registry-language-filter', e.target.value);
+    applyFilters();
+});
+
+document.getElementById('tagFilter').addEventListener('change', (e) => {
+    activeTagFilter = e.target.value;
+    localStorage.setItem('mise-registry-tag-filter', e.target.value);
+    applyFilters();
 });
 
 document.getElementById('sort').addEventListener('change', (e) => {
@@ -442,10 +553,20 @@ document.getElementById('sort').addEventListener('change', (e) => {
     renderTools();
 });
 
-// Load saved sort preference
+// Load saved preferences
 const savedSort = localStorage.getItem('mise-registry-sort');
 if (savedSort) {
     document.getElementById('sort').value = savedSort;
+}
+
+const savedLanguageFilter = localStorage.getItem('mise-registry-language-filter');
+if (savedLanguageFilter) {
+    activeLanguageFilter = savedLanguageFilter;
+}
+
+const savedTagFilter = localStorage.getItem('mise-registry-tag-filter');
+if (savedTagFilter) {
+    activeTagFilter = savedTagFilter;
 }
 
 loadRegistry();
